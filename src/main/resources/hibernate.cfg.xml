@@ -1,3 +1,13 @@
 <hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">org.h2.Driver</property>
+        <property name="connection.url">jdbc:h2:file:./data/worldbank;USER=sa</property>
+        <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+        <!-- <property name="hbm2dll.auto">update</property> not needed in this project,
+        as we are not changing the schema, but including as a comment for reference -->
+        <property name="show_sql">true</property>
 
+        <!-- annotated entity classes -->
+        <mapping class="net.jeremiahshore.apdwh.model.Country" />
+    </session-factory>
 </hibernate-configuration>
